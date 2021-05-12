@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Hoop.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Minigames/ShootDaHoops/BALL 1.gd" type="Script" id=2]
+[ext_resource path="res://Assets/hoop.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ball.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.1745, 13.1942 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.1486, 13.238 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 32.2849
+
+[node name="ShootDaHoops" type="Node2D"]
+
+[node name="Hoop" type="KinematicBody2D" parent="."]
+position = Vector2( 512, 184 )
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hoop"]
+texture = ExtResource( 3 )
+
+[node name="collisionRight" type="CollisionShape2D" parent="Hoop"]
+position = Vector2( 109.411, 147 )
+shape = SubResource( 1 )
+
+[node name="collisionLeft" type="CollisionShape2D" parent="Hoop"]
+position = Vector2( -106.206, 147 )
+shape = SubResource( 2 )
+
+[node name="BALL 1" type="KinematicBody2D" parent="."]
+position = Vector2( 110.875, 543.886 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BALL 1"]
+texture = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="BALL 1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BALL 1"]
+shape = SubResource( 3 )
+
+[node name="BALL 2" type="KinematicBody2D" parent="."]
+position = Vector2( 305.655, 543.886 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BALL 2"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BALL 2"]
+shape = SubResource( 3 )
+
+[node name="BALL 3" type="KinematicBody2D" parent="."]
+position = Vector2( 519.913, 543.886 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BALL 3"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BALL 3"]
+shape = SubResource( 3 )
+
+[node name="BALL 4" type="KinematicBody2D" parent="."]
+position = Vector2( 786.611, 543.886 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BALL 4"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BALL 4"]
+shape = SubResource( 3 )

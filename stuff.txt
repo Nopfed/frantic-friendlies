@@ -1,0 +1,37 @@
+Free to play Multiplayer Party Game
+
+Mario Party + Wario Ware = had baby
+Very very simple anyone can pick up and play
+
+Core loop is just up to 4 players looping through games
+Winner is last man standing
+you lose by being last in a mini game 3 times
+
+
+Minigames:
+
+Shoot stuff in a hoop - the hoop move and people shoot balls at it
+	Ball shoots on 2D "arc" trajectory
+	players have an arrow that they aim
+Shooting gallery
+Archery
+
+Stationary platforming
+Flappy bird/jet man minigame
+Spiderman slinging
+
+Warlords
+Air Hockey - pokemon stadium mr mime game
+Pokemon stadium ball collect thing - furret game
+
+
+Inspirational games:
+Mario Party
+Pokemon Stadium Minigames
+Crash Bash
+WarioWare
+4 second fury/frenzy
+flappy bird/jetman
+flash spider man slinging game
+Fuzion Frenzy
+Kirby 64 minigames
