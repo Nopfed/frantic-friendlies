@@ -1,0 +1,4 @@
+5/18 TT #2
+-----------
+Trying to get ball tween to reset
+probably should just switch it to an animation that plays on action press

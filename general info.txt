@@ -1,0 +1,44 @@
+Frantic Friendlies
+-------------------
+- Free to play Multiplayer Party Game
+- Mario Party + Wario Ware = had baby
+- Very very VERY simple anyone can pick up and play
+- Core loop is just up to 4 players looping through games
+- Winner is last man standing
+- you lose by being last in a mini game 3 times?
+- each minigame has 4 player objects that output score information
+- Games get harder/faster as time goes on/you get less time
+
+Inspirational games
+-------------------
+- Mario Party
+- Pokemon Stadium Minigames
+- Crash Bash
+- WarioWare
+- 4 second fury/frenzy
+- flappy bird/jetman
+- flash spider man slinging game
+- Fuzion Frenzy
+- Kirby 64 minigames
+
+
+Ideas
+------
+//IDEA - BR mode 99 player knockout mode
+//IDEA - SKINS? player customization options/unlockables
+	implies player account levels or progression or something
+
+Todo List
+----------
+//TODO - score counter  ✓
+//TODO - script that stores information across minigames  ✓
+
+//TODO - timer for games?
+//TODO - online netcode/server side learn n make
+//TODO - Minigame selection screen/scene
+	Script that randomly chooses next minigame
+//TODO - Categorize Minigames by Type/Intensity
+	Minigames sorted by type/intensity
+
+
+

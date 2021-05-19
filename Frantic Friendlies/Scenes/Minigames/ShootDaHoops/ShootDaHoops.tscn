@@ -1,42 +1,46 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Hoop.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Minigames/ShootDaHoops/BALL 1.gd" type="Script" id=2]
 [ext_resource path="res://Assets/hoop.png" type="Texture" id=3]
 [ext_resource path="res://Assets/ball.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scripts/p1 contain.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.1745, 13.1942 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10.1486, 13.238 )
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 80, 60 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 32.2849
 
+[sub_resource type="DynamicFont" id=4]
+size = 11
+extra_spacing_char = 1
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 13
+extra_spacing_char = 1
+font_data = ExtResource( 5 )
+
 [node name="ShootDaHoops" type="Node2D"]
 
-[node name="Hoop" type="KinematicBody2D" parent="."]
+[node name="Hoop" type="Area2D" parent="."]
 position = Vector2( 512, 184 )
 scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Hoop"]
 texture = ExtResource( 3 )
 
-[node name="collisionRight" type="CollisionShape2D" parent="Hoop"]
-position = Vector2( 109.411, 147 )
-shape = SubResource( 1 )
+[node name="hoop" type="CollisionShape2D" parent="Hoop"]
+position = Vector2( 5.56812, 218.886 )
+shape = SubResource( 6 )
 
-[node name="collisionLeft" type="CollisionShape2D" parent="Hoop"]
-position = Vector2( -106.206, 147 )
-shape = SubResource( 2 )
-
-[node name="BALL 1" type="KinematicBody2D" parent="."]
-position = Vector2( 110.875, 543.886 )
+[node name="BALL 1" type="KinematicBody2D" parent="." groups=[
+"p1",
+]]
+position = Vector2( 104, 504 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -50,8 +54,10 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BALL 1"]
 shape = SubResource( 3 )
 
-[node name="BALL 2" type="KinematicBody2D" parent="."]
-position = Vector2( 305.655, 543.886 )
+[node name="BALL 2" type="KinematicBody2D" parent="." groups=[
+"p2",
+]]
+position = Vector2( 304, 512 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -62,8 +68,10 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BALL 2"]
 shape = SubResource( 3 )
 
-[node name="BALL 3" type="KinematicBody2D" parent="."]
-position = Vector2( 519.913, 543.886 )
+[node name="BALL 3" type="KinematicBody2D" parent="." groups=[
+"p3",
+]]
+position = Vector2( 512, 512 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -74,8 +82,10 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BALL 3"]
 shape = SubResource( 3 )
 
-[node name="BALL 4" type="KinematicBody2D" parent="."]
-position = Vector2( 786.611, 543.886 )
+[node name="BALL 4" type="KinematicBody2D" parent="." groups=[
+"p4",
+]]
+position = Vector2( 768, 512 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -85,3 +95,119 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BALL 4"]
 shape = SubResource( 3 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="p1 contain" type="VBoxContainer" parent="HUD"]
+margin_left = 48.0
+margin_top = 552.0
+margin_right = 159.0
+margin_bottom = 595.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="p1 name" type="Label" parent="HUD/p1 contain"]
+margin_right = 111.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.992157, 0.964706, 0.584314, 1 )
+text = "xX420_blaze_itXx"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p1 score" type="Label" parent="HUD/p1 contain"]
+margin_top = 21.0
+margin_right = 111.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.992157, 0.964706, 0.584314, 1 )
+text = "Score: 100"
+
+[node name="p2 contain" type="VBoxContainer" parent="HUD"]
+margin_left = 248.0
+margin_top = 552.0
+margin_right = 359.0
+margin_bottom = 595.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="p2 name" type="Label" parent="HUD/p2 contain"]
+margin_right = 111.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.498039, 0.498039, 1 )
+text = "giRL_gamER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p2 score" type="Label" parent="HUD/p2 contain"]
+margin_top = 21.0
+margin_right = 111.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.498039, 0.498039, 1 )
+text = "Score: 100"
+
+[node name="p3 contain" type="VBoxContainer" parent="HUD"]
+margin_left = 456.0
+margin_top = 552.0
+margin_right = 567.0
+margin_bottom = 595.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="p3 name" type="Label" parent="HUD/p3 contain"]
+margin_right = 111.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.25098, 0.517647, 0.235294, 1 )
+text = "nopfed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p3 score" type="Label" parent="HUD/p3 contain"]
+margin_top = 21.0
+margin_right = 111.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.25098, 0.517647, 0.235294, 1 )
+text = "Score: 100"
+
+[node name="p4 contain" type="VBoxContainer" parent="HUD"]
+margin_left = 728.0
+margin_top = 552.0
+margin_right = 839.0
+margin_bottom = 595.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="p4 name" type="Label" parent="HUD/p4 contain"]
+margin_right = 111.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.2, 0.431373, 0.658824, 1 )
+text = "soulempower"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p4 score" type="Label" parent="HUD/p4 contain"]
+margin_top = 21.0
+margin_right = 111.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.2, 0.431373, 0.658824, 1 )
+text = "Score: 100"
+[connection signal="body_entered" from="Hoop" to="Hoop" method="_on_Hoop_body_entered"]

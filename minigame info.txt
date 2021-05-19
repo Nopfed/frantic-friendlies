@@ -1,0 +1,31 @@
+Minigames
+---------
+
+Shoot stuff in a hoop - the hoop move and people shoot balls at it
+	Ball shoots on 2D "arc" trajectory
+	players have an arrow that they aim
+
+	//TODO - hoop no move on collision ✓
+
+	//TODO - figure out how many shots and shot reset time
+	//TODO - reset ball position after shot
+	//TODO - fix ball arc
+		probably do an animation
+	//TODO - fix visual layers on hoop (ball in front of backboard and behind net/hoop)
+	//TODO - background image/coloring
+	//TODO - change color of balls based on player
+
+
+Shooting gallery
+Archery
+
+Stationary platforming
+Flappy bird/jet man minigame
+Spiderman slinging
+
+Warlords
+Air Hockey - pokemon stadium mr mime game/mr mime barrier ball
+Pokemon stadium ball collect thing - furret game
+
+
+
